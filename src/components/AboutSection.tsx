@@ -7,6 +7,30 @@ const AboutSection = () => {
   const [api, setApi] = useState<any>();
   const [current, setCurrent] = useState(0);
 
+  const aboutContent = [
+    {
+      title: "מגע מרפא ומקצועי",
+      text: "מטפלת במגע לנשים, מתוך רוך, הקשבה ואהבה. אני מתמחה בטיפולי מגע המותאמים אישית לכל אישה, תוך יצירת מרחב בטוח ומקבל שמאפשר ריפוי אמיתי.",
+      highlight: "ניסיון של מעל 8 שנים בטיפולי מגע",
+      icon: Heart,
+      gradient: "from-emerald-50 to-green-50",
+    },
+    {
+      title: "מסע פנימי של ריפוי",
+      text: "העיסוי שאני מעניקה הוא מסע פנימי עמוק – להרפיה, ריפוי וחיבור מחודש לעצמך. כל טיפול הוא חוויה ייחודית המותאמת לצרכים האישיים שלך ולמצב הרגשי והגופני שלך באותו הרגע.",
+      highlight: "שילוב של טכניקות מסורתיות ומודרניות",
+      icon: Sparkles,
+      gradient: "from-green-50 to-emerald-50",
+    },
+    {
+      title: "שחרור כאבים ומתחים",
+      text: "הטיפולים שלי מתאימים במיוחד לשחרור כאבים כרוניים, סטרס ומתח נפשי מצטבר, דרך מגע עדין ומרפא שמגיע עמוק לשורש הבעיה. המגע מסייע בהפגת מתחים גופניים ונפשיים כאחד.",
+      highlight: "טיפול הוליסטי לגוף ולנפש",
+      icon: Leaf,
+      gradient: "from-emerald-50 to-stone-50",
+    },
+  ];
+
   useEffect(() => {
     if (!api) return;
 
@@ -16,29 +40,18 @@ const AboutSection = () => {
     });
   }, [api]);
 
-  const slides = [
-    {
-      title: "מגע מרפא ומקצועי",
-      description: "מטפלת במגע לנשים, מתוך רוך, הקשבה ואהבה. אני מתמחה בטיפולי מגע המותאמים אישית לכל אישה, תוך יצירת מרחב בטוח ומקבל שמאפשר ריפוי אמיתי.",
-      highlight: "ניסיון של מעל 8 שנים בטיפולי מגע",
-      icon: Heart,
-      bgColor: "bg-emerald-50"
-    },
-    {
-      title: "מסע פנימי של ריפוי",
-      description: "העיסוי שאני מעניקה הוא מסע פנימי עמוק – להרפיה, ריפוי וחיבור מחודש לעצמך. כל טיפול הוא חוויה ייחודית המותאמת לצרכים האישיים שלך ולמצב הרגשי והגופני שלך באותו הרגע.",
-      highlight: "שילוב של טכניקות מסורתיות ומודרניות",
-      icon: Sparkles,
-      bgColor: "bg-green-50"
-    },
-    {
-      title: "שחרור כאבים ומתחים",
-      description: "הטיפולים שלי מתאימים במיוחד לשחרור כאבים כרוניים, סטרס ומתח נפשי מצטבר, דרך מגע עדין ומרפא שמגיע עמוק לשורש הבעיה. המגע מסייע בהפגת מתחים גופניים ונפשיים כאחד.",
-      highlight: "טיפול הוליסטי לגוף ולנפש",
-      icon: Leaf,
-      bgColor: "bg-stone-50"
-    }
-  ];
+  // Auto-slide functionality
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      const currentIndex = api.selectedScrollSnap();
+      const nextIndex = (currentIndex + 1) % aboutContent.length;
+      api.scrollTo(nextIndex);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [api, aboutContent.length]);
 
   return (
     <section className="py-20 bg-gradient-to-b from-white via-stone-50/30 to-emerald-50/20">
@@ -60,14 +73,21 @@ const AboutSection = () => {
           </div>
 
           {/* Carousel */}
-          <Carousel setApi={setApi} className="w-full max-w-4xl mx-auto">
+          <Carousel 
+            setApi={setApi} 
+            className="w-full max-w-4xl mx-auto"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
             <CarouselContent>
-              {slides.map((slide, index) => {
+              {aboutContent.map((slide, index) => {
                 const IconComponent = slide.icon;
                 return (
                   <CarouselItem key={index} className="basis-full">
                     <div className="p-1">
-                      <div className={`${slide.bgColor} rounded-2xl p-8 shadow-lg border border-emerald-100 min-h-[450px] flex flex-col justify-between`}>
+                      <div className={`bg-gradient-to-br ${slide.gradient} rounded-2xl p-8 shadow-lg border border-emerald-100 min-h-[450px] flex flex-col justify-between`}>
                         {/* Header with Icon and Title */}
                         <div className="flex items-center gap-4 mb-6">
                           <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -81,7 +101,7 @@ const AboutSection = () => {
                         {/* Content */}
                         <div className="flex-1 space-y-6">
                           <p className="text-lg text-stone-700 leading-relaxed">
-                            {slide.description}
+                            {slide.text}
                           </p>
                           
                           {/* Highlight Box */}
@@ -107,7 +127,7 @@ const AboutSection = () => {
 
           {/* Dots Indicator */}
           <div className="flex justify-center mt-8 gap-2">
-            {slides.map((_, index) => (
+            {aboutContent.map((_, index) => (
               <button
                 key={index}
                 className={`transition-all duration-300 rounded-full ${
