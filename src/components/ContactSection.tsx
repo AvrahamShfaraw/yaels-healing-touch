@@ -25,10 +25,10 @@ const ContactSection = () => {
                   <h3 className="text-2xl font-medium text-healing-green mb-6">
                     בואי נתחבר
                   </h3>
-                  
+
                   {/* WhatsApp */}
                   <div className="mb-8">
-                    <Button 
+                    <Button
                       size="lg"
                       className="bg-healing-green hover:bg-healing-green/90 text-white w-full md:w-auto px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                       onClick={() => window.open('https://wa.me/972542160399', '_blank')}
@@ -61,7 +61,8 @@ const ContactSection = () => {
                   {/* Location */}
                   <div className="flex items-center justify-center md:justify-start text-gray-600">
                     <MapPin className="h-5 w-5 ml-2 text-healing-green" />
-                    <span>מיקום: לאתר Easy</span>
+                    <span>כובשי החרמון, קרית עקרון
+                    </span>
                   </div>
                 </div>
 
