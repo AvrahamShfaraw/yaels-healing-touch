@@ -43,6 +43,9 @@ const AboutSection = () => {
     }
   ];
 
+  console.log("About content array:", aboutContent);
+  console.log("Current slide index:", current);
+
   return (
     <section className="py-20 bg-gradient-to-b from-white via-stone-50/30 to-emerald-50/20">
       <div className="container-custom section-padding">
@@ -75,13 +78,14 @@ const AboutSection = () => {
                 }}
                 className="w-full max-w-full"
               >
-                <CarouselContent>
+                <CarouselContent className="-ml-4">
                   {aboutContent.map((content, index) => {
+                    console.log(`Rendering slide ${index}:`, content);
                     const IconComponent = content.icon;
                     return (
-                      <CarouselItem key={index} className="basis-full">
-                        <div className="p-1">
-                          <div className={`bg-gradient-to-br ${content.gradient} rounded-2xl p-6 md:p-8 lg:p-10 border border-emerald-100/50 shadow-sm transition-all duration-500 hover:shadow-md h-full`}>
+                      <CarouselItem key={index} className="pl-4 basis-full min-w-0">
+                        <div className="p-1 w-full">
+                          <div className={`bg-gradient-to-br ${content.gradient} rounded-2xl p-6 md:p-8 lg:p-10 border border-emerald-100/50 shadow-sm transition-all duration-500 hover:shadow-md h-full w-full`}>
                             {/* Icon and Title */}
                             <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                               <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-emerald-100 rounded-full flex items-center justify-center">
