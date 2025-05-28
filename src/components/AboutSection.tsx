@@ -75,11 +75,11 @@ const AboutSection = () => {
                 }}
                 className="w-full max-w-full"
               >
-                <CarouselContent className="-ml-1 md:-ml-4">
+                <CarouselContent>
                   {aboutContent.map((content, index) => {
                     const IconComponent = content.icon;
                     return (
-                      <CarouselItem key={index} className="pl-1 md:pl-4 basis-full">
+                      <CarouselItem key={index} className="basis-full">
                         <div className="p-1">
                           <div className={`bg-gradient-to-br ${content.gradient} rounded-2xl p-6 md:p-8 lg:p-10 border border-emerald-100/50 shadow-sm transition-all duration-500 hover:shadow-md h-full`}>
                             {/* Icon and Title */}
