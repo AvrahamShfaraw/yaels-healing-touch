@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className="absolute bottom-32 left-16 w-24 h-24 bg-healing-light-green/30 rounded-full blur-2xl animate-gentle-float" style={{ animationDelay: '2s' }}></div>
 
       <div className="container-custom section-padding flex flex-col items-center text-center z-10">
-        <div className="max-w-4xl w-full animate-fade-in px-4">
+        <div className="max-w-4xl w-full animate-fade-in p-4">
           {/* Image Container */}
           <div className="flex justify-center mb-10">
             <div className="w-full max-w-sm rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white">

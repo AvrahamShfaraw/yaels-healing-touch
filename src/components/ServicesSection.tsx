@@ -11,7 +11,7 @@ const ServicesSection = () => {
       price: "230 ₪",
       description: "מגע ממוקד לאזורים כואבים או תפוסים",
       icon: Clock,
-      highlight: false
+      highlight: true
     },
     {
       title: "עיסוי שוודי מלא",
@@ -27,7 +27,7 @@ const ServicesSection = () => {
       price: "1,050 ₪",
       description: "לתהליך מתמשך ומשחרר",
       icon: Gift,
-      highlight: false
+      highlight: true
     },
     {
       title: "סדרה + כלים להתפתחות אישית",
@@ -35,7 +35,7 @@ const ServicesSection = () => {
       price: "1,200 ₪", 
       description: "שילוב של עיסוי עם תהליך אישי, רגשי ונפשי",
       icon: Sparkles,
-      highlight: false
+      highlight: true
     }
   ];
 
