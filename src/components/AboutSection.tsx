@@ -35,9 +35,16 @@ const AboutSection = () => {
     if (!api) return;
 
     setCurrent(api.selectedScrollSnap());
-    api.on("select", () => {
+    
+    const onSelect = () => {
       setCurrent(api.selectedScrollSnap());
-    });
+    };
+
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
   }, [api]);
 
   // Auto-slide functionality
@@ -55,7 +62,7 @@ const AboutSection = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-white via-stone-50/30 to-emerald-50/20">
-      <div className="container-custom section-padding">
+      <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -72,72 +79,74 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* Carousel */}
-          <Carousel 
-            setApi={setApi} 
-            className="w-full max-w-4xl mx-auto"
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {aboutContent.map((slide, index) => {
-                const IconComponent = slide.icon;
-                return (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
-                    <div className="p-2">
-                      <div className={`bg-gradient-to-br ${slide.gradient} rounded-2xl p-6 md:p-8 shadow-lg border border-emerald-100 min-h-[400px] md:min-h-[450px] flex flex-col`}>
-                        {/* Header with Icon and Title */}
-                        <div className="flex items-start gap-4 mb-6">
-                          <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                            <IconComponent className="w-6 h-6 text-emerald-700" />
+          {/* Carousel Container */}
+          <div className="relative max-w-4xl mx-auto">
+            <Carousel 
+              setApi={setApi}
+              className="w-full"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent>
+                {aboutContent.map((slide, index) => {
+                  const IconComponent = slide.icon;
+                  return (
+                    <CarouselItem key={index} className="basis-full">
+                      <div className="p-4">
+                        <div className={`bg-gradient-to-br ${slide.gradient} rounded-2xl p-8 shadow-lg border border-emerald-100 min-h-[450px]`}>
+                          {/* Header with Icon and Title */}
+                          <div className="flex items-start gap-4 mb-6">
+                            <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
+                              <IconComponent className="w-6 h-6 text-emerald-700" />
+                            </div>
+                            <h3 className="text-2xl md:text-3xl font-medium text-emerald-800 leading-tight">
+                              {slide.title}
+                            </h3>
                           </div>
-                          <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-emerald-800 leading-tight">
-                            {slide.title}
-                          </h3>
-                        </div>
 
-                        {/* Content */}
-                        <div className="flex-1 space-y-6">
-                          <p className="text-base md:text-lg text-stone-700 leading-relaxed font-light">
-                            {slide.text}
-                          </p>
-                          
-                          {/* Highlight Box */}
-                          <div className="bg-white/80 p-4 rounded-xl border border-emerald-200/50 backdrop-blur-sm">
-                            <div className="flex items-start gap-3">
-                              <div className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0 mt-2"></div>
-                              <p className="text-emerald-800 font-medium text-sm md:text-base">
-                                {slide.highlight}
-                              </p>
+                          {/* Content */}
+                          <div className="space-y-6">
+                            <p className="text-lg text-stone-700 leading-relaxed font-light">
+                              {slide.text}
+                            </p>
+                            
+                            {/* Highlight Box */}
+                            <div className="bg-white/80 p-4 rounded-xl border border-emerald-200/50 backdrop-blur-sm">
+                              <div className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0 mt-2"></div>
+                                <p className="text-emerald-800 font-medium text-base">
+                                  {slide.highlight}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-            
-            <CarouselPrevious className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg -left-4 md:-left-12" />
-            <CarouselNext className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg -right-4 md:-right-12" />
-          </Carousel>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              
+              <CarouselPrevious className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg -left-4 md:-left-12" />
+              <CarouselNext className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg -right-4 md:-right-12" />
+            </Carousel>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 gap-2">
-            {aboutContent.map((_, index) => (
-              <button
-                key={index}
-                className={`transition-all duration-300 rounded-full ${
-                  current === index 
-                    ? 'w-8 h-3 bg-emerald-600' 
-                    : 'w-3 h-3 bg-stone-300 hover:bg-emerald-300'
-                }`}
-                onClick={() => api?.scrollTo(index)}
-              />
-            ))}
+            {/* Dots Indicator */}
+            <div className="flex justify-center mt-8 gap-2">
+              {aboutContent.map((_, index) => (
+                <button
+                  key={index}
+                  className={`transition-all duration-300 rounded-full ${
+                    current === index 
+                      ? 'w-8 h-3 bg-emerald-600' 
+                      : 'w-3 h-3 bg-stone-300 hover:bg-emerald-300'
+                  }`}
+                  onClick={() => api?.scrollTo(index)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
