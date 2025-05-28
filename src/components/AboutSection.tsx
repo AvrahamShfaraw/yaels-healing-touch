@@ -1,6 +1,7 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
+import { Heart, Sparkles, Leaf } from "lucide-react";
 
 const AboutSection = () => {
   const [api, setApi] = useState<any>();
@@ -21,83 +22,145 @@ const AboutSection = () => {
   const aboutContent = [
     {
       title: "מגע מרפא ומקצועי",
-      text: "מטפלת במגע לנשים, מתוך רוך, הקשבה ואהבה. אני מתמחה בטיפולי מגע המותאמים אישית לכל אישה, תוך יצירת מרחב בטוח ומקבל.",
-      highlight: "ניסיון של מעל 8 שנים בטיפולי מגע"
+      text: "מטפלת במגע לנשים, מתוך רוך, הקשבה ואהבה. אני מתמחה בטיפולי מגע המותאמים אישית לכל אישה, תוך יצירת מרחב בטוח ומקבל שמאפשר ריפוי אמיתי.",
+      highlight: "ניסיון של מעל 8 שנים בטיפולי מגע",
+      icon: Heart,
+      gradient: "from-emerald-50 to-green-50"
     },
     {
       title: "מסע פנימי של ריפוי",
-      text: "העיסוי שאני מעניקה הוא מסע פנימי – להרפיה, ריפוי וחיבור לעצמך. כל טיפול הוא חוויה ייחודית המותאמת לצרכים האישיים שלך.",
-      highlight: "שילוב של טכניקות מסורתיות ומודרניות"
+      text: "העיסוי שאני מעניקה הוא מסע פנימי עמוק – להרפיה, ריפוי וחיבור מחודש לעצמך. כל טיפול הוא חוויה ייחודית המותאמת לצרכים האישיים שלך ולמצב הרגשי והגופני שלך באותו הרגע.",
+      highlight: "שילוב של טכניקות מסורתיות ומודרניות",
+      icon: Sparkles,
+      gradient: "from-green-50 to-emerald-50"
     },
     {
       title: "שחרור כאבים ומתחים",
-      text: "מתאים במיוחד לשחרור כאבים, סטרס ומתח נפשי, דרך מגע עדין ומרפא. הטיפולים מסייעים בהפגת מתחים גופניים ונפשיים כאחד.",
-      highlight: "טיפול הוליסטי לגוף ולנפש"
+      text: "הטיפולים שלי מתאימים במיוחד לשחרור כאבים כרוניים, סטרס ומתח נפשי מצטבר, דרך מגע עדין ומרפא שמגיע עמוק לשורש הבעיה. המגע מסייע בהפגת מתחים גופניים ונפשיים כאחד.",
+      highlight: "טיפול הוליסטי לגוף ולנפש",
+      icon: Leaf,
+      gradient: "from-emerald-50 to-stone-50"
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-stone-50">
+    <section className="py-20 bg-gradient-to-b from-white via-stone-50/30 to-emerald-50/20">
       <div className="container-custom section-padding">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-emerald-700 mb-8">
-            נעים להכיר, אני יעל
-          </h2>
-          <div className="w-16 h-1 bg-emerald-600 mx-auto mb-12"></div>
-          
-          <div className="bg-stone-100/60 rounded-3xl p-8 md:p-12 shadow-lg border border-stone-200/50">
-            <Carousel
-              setApi={setApi}
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent>
-                {aboutContent.map((content, index) => (
-                  <CarouselItem key={index}>
-                    <div className="p-6 space-y-6">
-                      <h3 className="text-xl md:text-2xl font-medium text-emerald-800 mb-4">
-                        {content.title}
-                      </h3>
-                      <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-light">
-                        {content.text}
-                      </p>
-                      <div className="mt-6 p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-                        <p className="text-emerald-700 font-medium text-sm md:text-base">
-                          {content.highlight}
-                        </p>
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="bg-white/80 border-emerald-200 hover:bg-emerald-50 text-emerald-700" />
-              <CarouselNext className="bg-white/80 border-emerald-200 hover:bg-emerald-50 text-emerald-700" />
-            </Carousel>
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="w-8 h-1 bg-emerald-600 rounded-full"></div>
+              <Heart className="w-6 h-6 text-emerald-600" />
+              <div className="w-8 h-1 bg-emerald-600 rounded-full"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light text-emerald-800 mb-6">
+              נעים להכיר, אני יעל
+            </h2>
+            <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+              מטפלת מוסמכת במגע מרפא עם תשוקה לריפוי ולהעצמה של נשים
+            </p>
           </div>
           
-          {/* Single set of carousel indicators */}
-          <div className="flex justify-center mt-8 space-x-2 space-x-reverse">
-            {aboutContent.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  current === index 
-                    ? 'bg-emerald-600 scale-110' 
-                    : 'bg-stone-300 hover:bg-emerald-300'
-                }`}
-                onClick={() => api?.scrollTo(index)}
-              />
-            ))}
+          {/* Carousel Container */}
+          <div className="relative">
+            <div className="bg-gradient-to-br from-white to-cream-50 rounded-3xl p-8 md:p-12 shadow-xl border border-emerald-100/50 backdrop-blur-sm">
+              <Carousel
+                setApi={setApi}
+                opts={{
+                  align: "center",
+                  loop: true,
+                  duration: 30,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-4">
+                  {aboutContent.map((content, index) => {
+                    const IconComponent = content.icon;
+                    return (
+                      <CarouselItem key={index} className="pl-4">
+                        <div className={`bg-gradient-to-br ${content.gradient} rounded-2xl p-8 md:p-10 border border-emerald-100/50 shadow-sm transition-all duration-500 hover:shadow-md`}>
+                          {/* Icon and Title */}
+                          <div className="flex items-center gap-4 mb-6">
+                            <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                              <IconComponent className="w-6 h-6 text-emerald-700" />
+                            </div>
+                            <h3 className="text-2xl md:text-3xl font-medium text-emerald-800 leading-tight">
+                              {content.title}
+                            </h3>
+                          </div>
+                          
+                          {/* Main Content */}
+                          <div className="space-y-6">
+                            <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-light">
+                              {content.text}
+                            </p>
+                            
+                            {/* Highlight Box */}
+                            <div className="relative">
+                              <div className="absolute inset-0 bg-gradient-to-r from-emerald-200/50 to-green-200/50 rounded-xl blur-sm"></div>
+                              <div className="relative bg-white/80 backdrop-blur-sm p-5 rounded-xl border border-emerald-200/50">
+                                <div className="flex items-center gap-3">
+                                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                                  <p className="text-emerald-800 font-medium text-base md:text-lg">
+                                    {content.highlight}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    );
+                  })}
+                </CarouselContent>
+                
+                {/* Navigation Buttons */}
+                <CarouselPrevious className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg -left-6 md:-left-12 w-10 h-10" />
+                <CarouselNext className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg -right-6 md:-right-12 w-10 h-10" />
+              </Carousel>
+            </div>
+            
+            {/* Progress Indicators */}
+            <div className="flex justify-center mt-10 space-x-3 space-x-reverse">
+              {aboutContent.map((_, index) => (
+                <button
+                  key={index}
+                  className={`relative transition-all duration-500 ${
+                    current === index 
+                      ? 'w-8 h-3' 
+                      : 'w-3 h-3'
+                  }`}
+                  onClick={() => api?.scrollTo(index)}
+                >
+                  <div className={`w-full h-full rounded-full transition-all duration-500 ${
+                    current === index 
+                      ? 'bg-emerald-600 shadow-lg' 
+                      : 'bg-stone-300 hover:bg-emerald-300'
+                  }`}></div>
+                  {current === index && (
+                    <div className="absolute inset-0 bg-emerald-400 rounded-full animate-pulse opacity-40"></div>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
           
-          {/* Decorative elements */}
-          <div className="flex justify-center mt-12 space-x-4 space-x-reverse">
-            <div className="w-3 h-3 bg-emerald-600 rounded-full animate-pulse"></div>
-            <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse delay-150"></div>
-            <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse delay-300"></div>
+          {/* Decorative Bottom Elements */}
+          <div className="flex justify-center items-center mt-16 space-x-8 space-x-reverse">
+            <div className="flex space-x-2 space-x-reverse">
+              <div className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse delay-150"></div>
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse delay-300"></div>
+            </div>
+            <div className="text-emerald-700/60 text-sm font-light">
+              ◆ ◆ ◆
+            </div>
+            <div className="flex space-x-2 space-x-reverse">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse delay-300"></div>
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse delay-150"></div>
+              <div className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></div>
+            </div>
           </div>
         </div>
       </div>
