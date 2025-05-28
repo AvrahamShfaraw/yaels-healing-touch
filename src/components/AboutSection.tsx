@@ -68,17 +68,17 @@ const AboutSection = () => {
               <Carousel
                 setApi={setApi}
                 opts={{
-                  align: "center",
+                  align: "start",
                   loop: true,
-                  duration: 30,
+                  slidesToScroll: 1,
                 }}
                 className="w-full"
               >
-                <CarouselContent>
+                <CarouselContent className="-ml-4">
                   {aboutContent.map((content, index) => {
                     const IconComponent = content.icon;
                     return (
-                      <CarouselItem key={index}>
+                      <CarouselItem key={index} className="pl-4 basis-full">
                         <div className={`bg-gradient-to-br ${content.gradient} rounded-2xl p-8 md:p-10 border border-emerald-100/50 shadow-sm transition-all duration-500 hover:shadow-md`}>
                           {/* Icon and Title */}
                           <div className="flex items-center gap-4 mb-6">
