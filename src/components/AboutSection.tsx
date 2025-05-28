@@ -18,10 +18,22 @@ const AboutSection = () => {
     });
   }, [api]);
 
-  const aboutTexts = [
-    "מטפלת במגע לנשים, מתוך רוך, הקשבה ואהבה.",
-    "העיסוי שאני מעניקה הוא מסע פנימי – להרפיה, ריפוי וחיבור לעצמך.",
-    "מתאים במיוחד לשחרור כאבים, סטרס ומתח נפשי, דרך מגע עדין ומרפא."
+  const aboutContent = [
+    {
+      title: "מגע מרפא ומקצועי",
+      text: "מטפלת במגע לנשים, מתוך רוך, הקשבה ואהבה. אני מתמחה בטיפולי מגע המותאמים אישית לכל אישה, תוך יצירת מרחב בטוח ומקבל.",
+      highlight: "ניסיון של מעל 8 שנים בטיפולי מגע"
+    },
+    {
+      title: "מסע פנימי של ריפוי",
+      text: "העיסוי שאני מעניקה הוא מסע פנימי – להרפיה, ריפוי וחיבור לעצמך. כל טיפול הוא חוויה ייחודית המותאמת לצרכים האישיים שלך.",
+      highlight: "שילוב של טכניקות מסורתיות ומודרניות"
+    },
+    {
+      title: "שחרור כאבים ומתחים",
+      text: "מתאים במיוחד לשחרור כאבים, סטרס ומתח נפשי, דרך מגע עדין ומרפא. הטיפולים מסייעים בהפגת מתחים גופניים ונפשיים כאחד.",
+      highlight: "טיפול הוליסטי לגוף ולנפש"
+    }
   ];
 
   return (
@@ -43,12 +55,20 @@ const AboutSection = () => {
               className="w-full"
             >
               <CarouselContent>
-                {aboutTexts.map((text, index) => (
+                {aboutContent.map((content, index) => (
                   <CarouselItem key={index}>
-                    <div className="p-6">
+                    <div className="p-6 space-y-6">
+                      <h3 className="text-xl md:text-2xl font-medium text-emerald-800 mb-4">
+                        {content.title}
+                      </h3>
                       <p className="text-lg md:text-xl text-stone-700 leading-relaxed font-light">
-                        {text}
+                        {content.text}
                       </p>
+                      <div className="mt-6 p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                        <p className="text-emerald-700 font-medium text-sm md:text-base">
+                          {content.highlight}
+                        </p>
+                      </div>
                     </div>
                   </CarouselItem>
                 ))}
@@ -56,21 +76,21 @@ const AboutSection = () => {
               <CarouselPrevious className="bg-white/80 border-emerald-200 hover:bg-emerald-50 text-emerald-700" />
               <CarouselNext className="bg-white/80 border-emerald-200 hover:bg-emerald-50 text-emerald-700" />
             </Carousel>
-            
-            {/* Carousel indicators */}
-            <div className="flex justify-center mt-8 space-x-2 space-x-reverse">
-              {aboutTexts.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    current === index 
-                      ? 'bg-emerald-600 scale-110' 
-                      : 'bg-stone-300 hover:bg-emerald-300'
-                  }`}
-                  onClick={() => api?.scrollTo(index)}
-                />
-              ))}
-            </div>
+          </div>
+          
+          {/* Single set of carousel indicators */}
+          <div className="flex justify-center mt-8 space-x-2 space-x-reverse">
+            {aboutContent.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  current === index 
+                    ? 'bg-emerald-600 scale-110' 
+                    : 'bg-stone-300 hover:bg-emerald-300'
+                }`}
+                onClick={() => api?.scrollTo(index)}
+              />
+            ))}
           </div>
           
           {/* Decorative elements */}
