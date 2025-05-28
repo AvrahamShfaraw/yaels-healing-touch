@@ -66,7 +66,7 @@ const AboutSection = () => {
           </div>
           
           {/* Carousel Container */}
-          <div className="relative">
+          <div className="relative w-full">
             <div className="bg-gradient-to-br from-white to-cream-50 rounded-3xl p-6 md:p-8 shadow-xl border border-emerald-100/50 backdrop-blur-sm">
               <Carousel
                 setApi={setApi}
@@ -76,16 +76,16 @@ const AboutSection = () => {
                   skipSnaps: false,
                   dragFree: false,
                 }}
-                className="w-full max-w-full"
+                className="w-full"
               >
-                <CarouselContent className="-ml-4">
+                <CarouselContent className="w-full">
                   {aboutContent.map((content, index) => {
                     console.log(`Rendering slide ${index}:`, content);
                     const IconComponent = content.icon;
                     return (
-                      <CarouselItem key={index} className="pl-4 basis-full min-w-0">
-                        <div className="p-1 w-full">
-                          <div className={`bg-gradient-to-br ${content.gradient} rounded-2xl p-6 md:p-8 lg:p-10 border border-emerald-100/50 shadow-sm transition-all duration-500 hover:shadow-md h-full w-full`}>
+                      <CarouselItem key={index} className="w-full flex-shrink-0">
+                        <div className="w-full h-full">
+                          <div className={`bg-gradient-to-br ${content.gradient} rounded-2xl p-6 md:p-8 lg:p-10 border border-emerald-100/50 shadow-sm transition-all duration-500 hover:shadow-md w-full h-full min-h-[400px]`}>
                             {/* Icon and Title */}
                             <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                               <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-emerald-100 rounded-full flex items-center justify-center">
