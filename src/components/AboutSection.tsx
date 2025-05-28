@@ -81,34 +81,34 @@ const AboutSection = () => {
               loop: true,
             }}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {aboutContent.map((slide, index) => {
                 const IconComponent = slide.icon;
                 return (
-                  <CarouselItem key={index} className="basis-full">
-                    <div className="p-1">
-                      <div className={`bg-gradient-to-br ${slide.gradient} rounded-2xl p-8 shadow-lg border border-emerald-100 min-h-[450px] flex flex-col`}>
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
+                    <div className="p-2">
+                      <div className={`bg-gradient-to-br ${slide.gradient} rounded-2xl p-6 md:p-8 shadow-lg border border-emerald-100 min-h-[400px] md:min-h-[450px] flex flex-col`}>
                         {/* Header with Icon and Title */}
-                        <div className="flex items-center gap-4 mb-6">
+                        <div className="flex items-start gap-4 mb-6">
                           <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
                             <IconComponent className="w-6 h-6 text-emerald-700" />
                           </div>
-                          <h3 className="text-2xl md:text-3xl font-medium text-emerald-800">
+                          <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-emerald-800 leading-tight">
                             {slide.title}
                           </h3>
                         </div>
 
                         {/* Content */}
                         <div className="flex-1 space-y-6">
-                          <p className="text-lg text-stone-700 leading-relaxed font-light">
+                          <p className="text-base md:text-lg text-stone-700 leading-relaxed font-light">
                             {slide.text}
                           </p>
                           
                           {/* Highlight Box */}
                           <div className="bg-white/80 p-4 rounded-xl border border-emerald-200/50 backdrop-blur-sm">
-                            <div className="flex items-center gap-3">
-                              <div className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0"></div>
-                              <p className="text-emerald-800 font-medium text-base">
+                            <div className="flex items-start gap-3">
+                              <div className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0 mt-2"></div>
+                              <p className="text-emerald-800 font-medium text-sm md:text-base">
                                 {slide.highlight}
                               </p>
                             </div>
@@ -121,8 +121,8 @@ const AboutSection = () => {
               })}
             </CarouselContent>
             
-            <CarouselPrevious className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg" />
-            <CarouselNext className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg" />
+            <CarouselPrevious className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg -left-4 md:-left-12" />
+            <CarouselNext className="bg-white/90 border-emerald-200 hover:bg-emerald-50 text-emerald-700 shadow-lg -right-4 md:-right-12" />
           </Carousel>
 
           {/* Dots Indicator */}
