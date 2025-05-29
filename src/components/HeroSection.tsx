@@ -59,49 +59,59 @@ const HeroSection = () => {
 
       <div className="container-custom section-padding items-center text-center z-10">
         <div className="max-w-4xl mx-auto animate-fade-in p-4 items-center">
-          <div className="relative max-w-2xl mx-auto">
-            <Carousel className="w-96 max-w-2xl mx-auto" dir="ltr"
-              setApi={setApi}
 
-            >
+          {/* Grid View for Large Screens */}
+          <div className="hidden lg:grid grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+            {imagePaths.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`תמונה מספר ${index + 1}`}
+                className="w-full h-[300px] object-cover rounded-3xl shadow-xl"
+              />
+            ))}
+          </div>
+
+          {/* Carousel for Small/Medium Screens */}
+          <div className="lg:hidden relative max-w-2xl mx-auto">
+            <Carousel className="w-96 max-w-2xl mx-auto" dir="ltr" setApi={setApi}>
               <CarouselContent>
                 {imagePaths.map((src, index) => (
                   <CarouselItem key={index}>
                     <img
                       src={src}
                       alt={`תמונה מספר ${index + 1}`}
-                      className="w-full h-[500px] rounded-3xl shadow-xl"
+                      className="w-full h-[500px] rounded-3xl shadow-xl object-cover"
                     />
                   </CarouselItem>
                 ))}
               </CarouselContent>
-             
             </Carousel>
-          </div>
-          {/* Progress Indicators */}
-          <div className="flex justify-center mt-5 mb-5 space-x-3 space-x-reverse" >
-            {imagePaths.map((_, index) => (
-              <button
 
-                key={index}
-                className={`relative transition-all duration-500 ${current === index ? 'w-8 h-3' : 'w-3 h-3'
-                  }`}
-                onClick={() => api?.scrollTo(index)}
-
-              >
-                <div
-                  className={`w-full h-full rounded-full transition-all duration-500 ${current === index
-                    ? 'bg-emerald-600 shadow-lg'
-                    : 'bg-stone-300 hover:bg-emerald-300'
+            {/* Progress Indicators */}
+            <div className="flex justify-center mt-5 mb-5 space-x-3 space-x-reverse">
+              {imagePaths.map((_, index) => (
+                <button
+                  key={index}
+                  className={`relative transition-all duration-500 ${current === index ? 'w-8 h-3' : 'w-3 h-3'
                     }`}
-                ></div>
-                {current === index && (
-                  <div className="absolute inset-0 bg-emerald-400 rounded-full animate-pulse opacity-40"></div>
-                )}
-              </button>
-            ))}
+                  onClick={() => api?.scrollTo(index)}
+                >
+                  <div
+                    className={`w-full h-full rounded-full transition-all duration-500 ${current === index
+                        ? 'bg-emerald-600 shadow-lg'
+                        : 'bg-stone-300 hover:bg-emerald-300'
+                      }`}
+                  ></div>
+                  {current === index && (
+                    <div className="absolute inset-0 bg-emerald-400 rounded-full animate-pulse opacity-40"></div>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
 
+          {/* Headings & Call to Action */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-healing-green mb-6 leading-tight">
             מגע ידיי מרפא
           </h1>
@@ -122,6 +132,7 @@ const HeroSection = () => {
           </Button>
         </div>
       </div>
+
 
     </section>
   );
