@@ -40,7 +40,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#fafa25] bg-gradient-to-b from-healing-mint/20 to-white">
+    <section className="py-20 bg-[#fafa25] bg-gradient-to-b from-healing-mint/20 to-[#fafa25]">
       <div className="container-custom section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-healing-green mb-8">
