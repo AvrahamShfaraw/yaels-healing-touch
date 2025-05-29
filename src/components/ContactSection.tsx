@@ -9,7 +9,7 @@ const ContactSection = () => {
       <div className="container-custom section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-white mb-8">
-            צור קשר
+            צרי קשר
           </h2>
           <div className="w-16 h-1 bg-white mx-auto mb-6"></div>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
