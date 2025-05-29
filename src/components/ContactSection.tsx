@@ -30,7 +30,7 @@ const ContactSection = () => {
                   <div className="mb-8">
                     <Button
                       size="lg"
-                      className="bg-healing-green hover:bg-healing-green/90 text-white w-full md:w-auto px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="bg-[#fafa25] bg-healing-green hover:bg-healing-green/90 text-white w-full md:w-auto px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                       onClick={() => window.open('https://wa.me/972542160399', '_blank')}
                     >
                       <MessageCircle className="ml-2 h-5 w-5" />
@@ -43,7 +43,7 @@ const ContactSection = () => {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="border-healing-green text-healing-green hover:bg-healing-green hover:text-white rounded-full"
+                      className="bg-[#fafa25] border-healing-green text-healing-green hover:bg-healing-green hover:text-white rounded-full"
                       onClick={() => window.open('https://www.instagram.com/yaeldese', '_blank')}
                     >
                       <Instagram className="h-5 w-5" />
@@ -51,7 +51,7 @@ const ContactSection = () => {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="border-healing-green text-healing-green hover:bg-healing-green hover:text-white rounded-full"
+                      className="bg-[#fafa25] border-healing-green text-healing-green hover:bg-healing-green hover:text-white rounded-full"
                       onClick={() => window.open('https://www.facebook.com/share/1Aa9XuNhdc/', '_blank')}
                     >
                       <Facebook className="h-5 w-5" />

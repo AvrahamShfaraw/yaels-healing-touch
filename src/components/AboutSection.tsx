@@ -28,7 +28,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white via-stone-50/30 to-emerald-50/20">
+    <section className="bg-[#fafa25] py-20 bg-gradient-to-b from-white via-stone-50/30 to-emerald-50/20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
