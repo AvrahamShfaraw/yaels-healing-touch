@@ -30,7 +30,7 @@ const ContactSection = () => {
                   <div className="mb-8">
                     <Button
                       size="lg"
-                      className="bg-[#fafa25] bg-healing-green hover:bg-healing-green/90 text-white w-full md:w-auto px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                      className=" bg-healing-green hover:bg-healing-green/90 text-white w-full md:w-auto px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                       onClick={() => window.open('https://wa.me/972542160399', '_blank')}
                     >
                       <MessageCircle className="ml-2 h-5 w-5" />
