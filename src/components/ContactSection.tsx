@@ -18,7 +18,7 @@ const ContactSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="bg-white/95 backdrop-blur-sm shadow-2xl">
+          <Card className="bg-white/95  shadow-2xl">
             <CardContent className="p-8 md:p-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-right">
