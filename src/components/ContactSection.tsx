@@ -34,7 +34,7 @@ const ContactSection = () => {
                       onClick={() => window.open('https://wa.me/972542160399', '_blank')}
                     >
                       <MessageCircle className="ml-2 h-5 w-5" />
-                      וואטסאפ לתיאום: 054-2160399
+                      לתיאום טיפול בוואטסאפ
                     </Button>
                   </div>
 
