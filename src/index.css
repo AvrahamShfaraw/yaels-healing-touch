@@ -8,7 +8,7 @@
     --background: 0;
     --foreground: 39 39 42;
 
-    --card: 255 255 255;
+    --card: 0;
     --card-foreground: 39 39 42;
 
     --popover: 255 255 255;
@@ -70,9 +70,9 @@
     --destructive: 127 29 29;
     --destructive-foreground: 248 250 252;
 
-    --border: 63 63 70;
+    --border: 0;
     --input: 63 63 70;
-    --ring: 143 188 143;
+    --ring: 0;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

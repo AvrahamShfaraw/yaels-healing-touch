@@ -15,7 +15,7 @@ const ServicesSection = () => {
     },
     {
       title: "עיסוי שוודי מלא",
-      duration: "90 דקות", 
+      duration: "90 דקות",
       price: "300 ₪",
       description: "טיפול גוף מלא להרפיה עמוקה וחיבור פנימי",
       icon: Heart,
@@ -32,7 +32,7 @@ const ServicesSection = () => {
     {
       title: "סדרה + כלים להתפתחות אישית",
       duration: "תהליך מלא",
-      price: "1,200 ₪", 
+      price: "1,200 ₪",
       description: "שילוב של עיסוי עם תהליך אישי, רגשי ונפשי",
       icon: Sparkles,
       highlight: true
@@ -40,7 +40,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#fafa25] bg-gradient-to-b from-healing-mint/20 to-[#fafa25]">
+    <section className="bg-green-200 py-20 bg-gradient-to-b from-green-200 via-stone-50/30 to-white">
       <div className="container-custom section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-healing-green mb-8">
@@ -56,14 +56,10 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card 
-                key={index} 
-                className={`transition-all duration-300 hover:shadow-xl hover:scale-105 ${
-                  service.highlight 
-                    ? 'ring-2 ring-healing-green bg-gradient-to-br from-healing-mint/50 to-white' 
-                    : 'hover:shadow-lg'
-                }`}
-              >
+              <Card
+                key={index}
+                className={`bg-gradient-to-br from-emerald-50 to-stone-50 rounded-2xl p-8 shadow-lg border border-emerald-100 h-full transition-transform duration-300 hover:scale-105`}>
+
                 <CardHeader className="text-center pb-4">
                   <div className="mx-auto mb-4 p-3 bg-healing-sage/20 rounded-full w-fit">
                     <IconComponent className="h-6 w-6 text-healing-green" />
@@ -80,8 +76,8 @@ const ServicesSection = () => {
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {service.description}
                   </p>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="border-healing-green text-healing-green hover:bg-healing-green hover:text-white transition-colors duration-300"
                     onClick={() => window.open('https://wa.me/972542160399', '_blank')}
                   >

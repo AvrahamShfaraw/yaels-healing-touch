@@ -81,7 +81,7 @@ const HeroSection = () => {
                     <img
                       src={src}
                       alt={`תמונה מספר ${index + 1}`}
-                      className="w-full h-[500px] rounded-3xl shadow-xl object-cover"
+                      className="w-full h-[500px] rounded-3xl object-cover"
                     />
                   </CarouselItem>
                 ))}
@@ -99,8 +99,8 @@ const HeroSection = () => {
                 >
                   <div
                     className={`w-full h-full rounded-full transition-all duration-500 ${current === index
-                        ? 'bg-emerald-600 shadow-lg'
-                        : 'bg-stone-300 hover:bg-emerald-300'
+                      ? 'bg-emerald-600 shadow-lg'
+                      : 'bg-stone-300 hover:bg-emerald-300'
                       }`}
                   ></div>
                   {current === index && (
@@ -119,9 +119,11 @@ const HeroSection = () => {
           <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-light mb-12 leading-relaxed">
             כשמגע הופך לריפוי
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            עיסוי שוודי הוליסטי לנשים בלבד – מרחב של רוגע, חיבור וריפוי עדין
+          <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed text-center">
+            טיפול הוליסטי המשלב מגע, גוף ונפש — כולל עיסוי וכלים לשחרור מתחים רגשיים,
+            כגון דמיון מודרך, תרגולי נשימה ועוד.
           </p>
+
           <Button
             size="lg"
             className="bg-healing-green hover:bg-healing-green/90 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"

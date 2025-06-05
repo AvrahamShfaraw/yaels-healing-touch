@@ -7,20 +7,20 @@ const AboutSection = () => {
     {
       title: "מגע מרפא ומקצועי",
       text: "מטפלת במגע לנשים, מתוך רוך, הקשבה ואהבה. אני מתמחה בטיפולי מגע המותאמים אישית לכל אישה, תוך יצירת מרחב בטוח ומקבל שמאפשר ריפוי אמיתי.",
-      highlight: "ניסיון של מעל 8 שנים בטיפולי מגע",
+      highlight: "ניסיון של 8 שנים לכלים של התפתחות אישית וטיפול במגע",
       icon: Heart,
       gradient: "from-emerald-50 to-green-50",
     },
     {
       title: "מסע פנימי של ריפוי",
       text: "העיסוי שאני מעניקה הוא מסע פנימי עמוק – להרפיה, ריפוי וחיבור מחודש לעצמך. כל טיפול הוא חוויה ייחודית המותאמת לצרכים האישיים שלך ולמצב הרגשי והגופני שלך באותו הרגע.",
-      highlight: "שילוב של טכניקות מסורתיות ומודרניות",
+      highlight: "שילוב טכניקת עיסוי שוודי, נשימות, דמיון מודרך וכלים של התפתחות אישית",
       icon: Sparkles,
       gradient: "from-green-50 to-emerald-50",
     },
     {
       title: "שחרור כאבים ומתחים",
-      text: "הטיפולים שלי מתאימים במיוחד לשחרור כאבים כרוניים, סטרס ומתח נפשי מצטבר, דרך מגע עדין ומרפא שמגיע עמוק לשורש הבעיה. המגע מסייע בהפגת מתחים גופניים ונפשיים כאחד.",
+      text: "הטיפולים שלי מתאימים במיוחד לשחרור כאב, לחץ, סטרס ומתח , דרך מגע עדין ומרפא שמגיע עמוק לשורש הבעיה. המגע מסייע בהפגת מתחים גופניים ונפשיים כאחד.",
       highlight: "טיפול הוליסטי לגוף ולנפש",
       icon: Leaf,
       gradient: "from-emerald-50 to-stone-50",
@@ -28,7 +28,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="bg-[#fafa25] py-20 bg-gradient-to-b from-white via-stone-50/30 to-emerald-50/20">
+    <section className="bg-green-200 py-20 bg-gradient-to-b from-white via-stone-50/30 to-green-200">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -68,7 +68,7 @@ const AboutSection = () => {
                       <p className="text-lg text-stone-700 leading-relaxed font-light">
                         {item.text}
                       </p>
-                      
+
                       {/* Highlight Box */}
                       <div className="bg-white/80 p-4 rounded-xl border border-emerald-200/50 backdrop-blur-sm">
                         <div className="flex items-start gap-3">

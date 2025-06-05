@@ -1,11 +1,10 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Instagram, Facebook, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-t from-healing-green to-healing-light-green">
+    <section className="py-20 bg-healing-green">
       <div className="container-custom section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light text-white mb-8">
@@ -18,9 +17,9 @@ const ContactSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="bg-white/95  shadow-2xl">
-            <CardContent className="p-8 md:p-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="bg-white/95 rounded-3xl shadow-2xl">
+            <div className="p-8 md:p-12 ">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
                 <div className="text-center md:text-right">
                   <h3 className="text-2xl font-medium text-healing-green mb-6">
                     בואי נתחבר
@@ -43,7 +42,7 @@ const ContactSection = () => {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="bg-[#fafa25] border-healing-green text-healing-green hover:bg-healing-green hover:text-white rounded-full"
+                      className="bg-healing-green border-healing-green text-white rounded-full"
                       onClick={() => window.open('https://www.instagram.com/yaeldese', '_blank')}
                     >
                       <Instagram className="h-5 w-5" />
@@ -51,7 +50,7 @@ const ContactSection = () => {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="bg-[#fafa25] border-healing-green text-healing-green hover:bg-healing-green hover:text-white rounded-full"
+                      className="bg-healing-green border-healing-green text-white rounded-full"
                       onClick={() => window.open('https://www.facebook.com/share/1Aa9XuNhdc/', '_blank')}
                     >
                       <Facebook className="h-5 w-5" />
@@ -79,8 +78,8 @@ const ContactSection = () => {
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>
