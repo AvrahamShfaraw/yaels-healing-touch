@@ -95,7 +95,7 @@ const HeroSection = () => {
                     <img
                       src={src}
                       alt={`תמונה מספר ${index + 1}`}
-                      className="w-full h-[400px] rounded-3xl object-cover"
+                      className="w-full h-[300px] rounded-3xl object-cover"
                     />
                   </CarouselItem>
                 ))}
