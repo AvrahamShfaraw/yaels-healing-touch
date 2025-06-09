@@ -60,6 +60,20 @@ const HeroSection = () => {
       <div className="container-custom section-padding items-center text-center z-10">
         <div className="max-w-4xl mx-auto animate-fade-in p-4 items-center">
 
+
+          {/* Headings & Call to Action */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-healing-green mb-6 leading-tight">
+            מגע ידיי מרפא
+          </h1>
+          <div className="w-24 h-1 bg-healing-sage mx-auto mb-8" />
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-light mb-12 leading-relaxed">
+            כשמגע הופך לריפוי
+          </h2>
+          <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed text-center">
+            טיפול הוליסטי המשלב מגע, גוף ונפש — כולל עיסוי וכלים לשחרור מתחים רגשיים,
+            כגון דמיון מודרך, תרגולי נשימה ועוד.
+          </p>
+
           {/* Grid View for Large Screens */}
           <div className="hidden lg:grid grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
             {imagePaths.map((src, index) => (
@@ -81,7 +95,7 @@ const HeroSection = () => {
                     <img
                       src={src}
                       alt={`תמונה מספר ${index + 1}`}
-                      className="w-full h-[500px] rounded-3xl object-cover"
+                      className="w-full h-[400px] rounded-3xl object-cover"
                     />
                   </CarouselItem>
                 ))}
@@ -110,19 +124,6 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-
-          {/* Headings & Call to Action */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-healing-green mb-6 leading-tight">
-            מגע ידיי מרפא
-          </h1>
-          <div className="w-24 h-1 bg-healing-sage mx-auto mb-8" />
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-light mb-12 leading-relaxed">
-            כשמגע הופך לריפוי
-          </h2>
-          <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed text-center">
-            טיפול הוליסטי המשלב מגע, גוף ונפש — כולל עיסוי וכלים לשחרור מתחים רגשיים,
-            כגון דמיון מודרך, תרגולי נשימה ועוד.
-          </p>
 
           <Button
             size="lg"
