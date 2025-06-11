@@ -38,12 +38,26 @@ const AboutSection = () => {
               <Heart className="w-6 h-6 text-emerald-600" />
               <div className="w-8 h-1 bg-emerald-600 rounded-full"></div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light text-emerald-800 mb-6">
-              נעים להכיר, אני יעל
-            </h2>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
-              מטפלת מוסמכת במגע מרפא עם תשוקה לריפוי ולהעצמה של נשים
-            </p>
+            
+	<h2 className="text-4xl md:text-5xl font-light text-emerald-800 mb-6">
+  נעים להכיר, אני יעל
+</h2>
+
+<img
+  src="/yael-profile.jpg"
+  alt="יעל מטפלת במגע"
+  className="w-40 h-40 rounded-full mx-auto mb-6 object-cover shadow-lg border-4 border-emerald-200"
+/>
+
+<p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed mb-4">
+  בת 36, נשואה באהבה גדולה ליצחק.  
+  חיה ונושמת למידת הגוף והנפש ב־8 השנים האחרונות.
+</p>
+<p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
+  דרך ההתפתחות האישית שלי,  
+  מגע ריפא לי את הנפש – ולכן אני כאן.
+</p>
+
           </div>
 
           {/* Content Grid */}

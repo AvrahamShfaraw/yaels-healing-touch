@@ -8,7 +8,7 @@ const ServicesSection = () => {
     {
       title: "עיסוי שוודי חלקי",
       duration: "60 דקות",
-      price: "230 ₪",
+      price: "250 ₪",
       description: "מגע ממוקד לאזורים כואבים או תפוסים",
       icon: Clock,
       highlight: true

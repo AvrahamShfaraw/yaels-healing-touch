@@ -11,9 +11,9 @@ import {
 import { useEffect, useState } from "react";
 
 const imagePaths = [
-  "/WhatsApp Image 2025-05-23 at 10.38.20_98535d16.jpg",
-  "/WhatsApp Image 2025-05-29 at 17.38.02_382643ab.jpg",
   "/WhatsApp Image 2025-05-29 at 17.38.02_b1527260.jpg",
+"/WhatsApp Image 2025-05-29 at 17.38.02_382643ab.jpg",
+"/WhatsApp Image 2025-05-23 at 10.38.20_98535d16.jpg",
 ] // Update with your real paths
 
 
@@ -70,8 +70,10 @@ const HeroSection = () => {
             כשמגע הופך לריפוי
           </h2>
           <p className="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed text-center">
-         טיפול הוליסטי המשלב מגע, גוף ונפש — כולל עיסוי וכלים לשחרור מתחים רגשיים,
-            כגון דמיון מודרך, תרגולי נשימה ועוד.
+            טיפול המשלב-מגע-גוף-נפש-<br />
+            הכולל עיסוי וכלים לשחרור<br />
+            מתחים רגשיים!<br />
+            כגון: דמיון מודרך, נשימות ועוד...
           </p>
 
 
