@@ -55,7 +55,7 @@ const AboutSection = () => {
 </p>
 <p className="text-lg text-stone-600 max-w-2xl mx-auto leading-relaxed">
   דרך ההתפתחות האישית שלי,  
-  מגע ריפא לי את הנפש – ולכן אני כאן.
+  מגע ריפא לי את הנפש ולכן אני כאן.
 </p>
 
           </div>
