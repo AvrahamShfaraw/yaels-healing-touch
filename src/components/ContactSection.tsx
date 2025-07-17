@@ -60,7 +60,7 @@ const ContactSection = () => {
                   {/* Location */}
                   <div className="flex items-center justify-center md:justify-start text-gray-600">
                     <MapPin className="h-5 w-5 ml-2 text-healing-green" />
-                    <span>כובשי החרמון, קרית עקרון
+                    <span>קרית עקרון
                     </span>
                   </div>
                 </div>
