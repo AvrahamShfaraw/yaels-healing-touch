@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Heart, Sparkles, Gift, MessageCircleMore, MessageCircle } from "lucide-react";
+import { Clock, Heart, Sparkles, Gift, MessageCircle } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
@@ -88,7 +88,7 @@ const ServicesSection = () => {
                   <div className="flex justify-center">
                     <Button
                       variant="outline"
-                      className="flex flex-row items-center justify-center gap-2 border-healing-green text-healing-green hover:bg-healing-green hover:text-white transition-colors duration-300"
+                      className="group flex flex-row items-center justify-center gap-2 border-healing-green text-healing-green hover:bg-healing-green hover:text-white transition-colors duration-300"
                       onClick={() => {
                         const message = `שלום, אני מתעניין/ת בטיפול: ${service.title}. אשמח לקבל פרטים נוספים.`;
                         const url = `https://wa.me/972542160399?text=${encodeURIComponent(message)}`;
