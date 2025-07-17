@@ -11,7 +11,7 @@ const ServicesSection = () => {
       price: "250 ₪",
       description: "מגע ממוקד לאזורים כואבים או תפוסים",
       icon: Clock,
-      highlight: true
+      highlight: false
     },
     {
       title: "עיסוי שוודי מלא",
@@ -19,7 +19,7 @@ const ServicesSection = () => {
       price: "300 ₪",
       description: "טיפול גוף מלא להרפיה עמוקה וחיבור פנימי",
       icon: Heart,
-      highlight: true
+      highlight: false
     },
     {
       title: "סדרת 3 טיפולים + הרביעי בחצי מחיר",
@@ -27,7 +27,7 @@ const ServicesSection = () => {
       price: "1,050 ₪",
       description: "לתהליך מתמשך ומשחרר",
       icon: Gift,
-      highlight: true
+      highlight: false
     },
     {
       title: "סדרה + כלים להתפתחות אישית",
@@ -64,14 +64,21 @@ const ServicesSection = () => {
                   <div className="mx-auto mb-4 p-3 bg-healing-sage/20 rounded-full w-fit">
                     <IconComponent className="h-6 w-6 text-healing-green" />
                   </div>
-                  <CardTitle className="text-xl font-medium text-healing-green">
+                   <CardTitle className="text-xl font-medium text-healing-green flex items-center justify-center gap-2">
                     {service.title}
+                    {service.highlight && (
+                      <span className="bg-healing-sage text-white text-xs px-2 py-1 rounded-full">
+                        מומלץ
+                      </span>
+                    )}
                   </CardTitle>
                   <p className="text-healing-sage font-medium">{service.duration}</p>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <div className="mb-4">
-                    <span className="text-3xl font-light text-healing-green">{service.price}</span>
+                    <div className="mb-4">
+                    <span className="text-healing-sage text-lg font-medium">
+                      מחיר אישי מותאם לכל לקוח
+                    </span>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {service.description}
@@ -79,7 +86,12 @@ const ServicesSection = () => {
                   <Button
                     variant="outline"
                     className="border-healing-green text-healing-green hover:bg-healing-green hover:text-white transition-colors duration-300"
-                    onClick={() => window.open('https://wa.me/972542160399', '_blank')}
+                    onClick={() => {
+  const message = `שלום, אני מתעניינת בטיפול: ${service.title}. אשמח לקבל פרטים נוספים.`;
+  const url = `https://wa.me/972542160399?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}}
+
                   >
                     לפרטים נוספים
                   </Button>
