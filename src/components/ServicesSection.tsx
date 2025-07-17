@@ -30,7 +30,7 @@ const ServicesSection = () => {
       highlight: false
     },
     {
-      title: "סדרה + כלים להתפתחות אישית",
+      title: "סדרת טיפולים + כלים להתפתחות אישית",
       duration: "תהליך מלא",
       price: "1,200 ₪",
       description: "שילוב של עיסוי עם תהליך אישי, רגשי ונפשי",
